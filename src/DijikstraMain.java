@@ -39,7 +39,7 @@ public class DijikstraMain {
             progressedNodes.add(selectedNode);
 
             for (int i = 0; i < graph[selectedNode].length; i++) {
-                if (graph[selectedNode][i] != 0 && !progressedNodes.contains(i)) {
+                if (graph[selectedNode][i] != 0 && !progressedNodes.contains(i) && nodeDistances[selectedNode] != Integer.MAX_VALUE) {
                     nodeDistanceTotal = nodeDistances[selectedNode] + graph[selectedNode][i];
                     if (nodeDistanceTotal < nodeDistances[i]) {
                         nodeDistances[i] = nodeDistances[selectedNode] + graph[selectedNode][i];
